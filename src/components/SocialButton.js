@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const ButtonLarge = ({ title, onPress }) => {
+const SocialButton = ({ title, onPress }) => {
     return (
         <TouchableOpacity
             activeOpacity={0.5}
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default ButtonLarge;
+export default SocialButton;

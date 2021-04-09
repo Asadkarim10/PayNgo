@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import SplashScreen from '../Screens/SplashScreen';
+import Login from '../screens/Login';
 
 const Stack = createStackNavigator();
 
@@ -9,12 +9,12 @@ export default function Navigation() {
 
     return (
 
-        <Stack.Navigator initialRouteName='SplashScreen'
+        <Stack.Navigator initialRouteName='Login'
             screenOptions={{
                 headerShown: false
             }}>
 
-            <Stack.Screen name="SplashScreen" component={SplashScreen} />
+            <Stack.Screen name="Login" component={Login} />
 
         </Stack.Navigator>
     );
