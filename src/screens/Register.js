@@ -6,7 +6,7 @@ import ButtonLarge from '../components/ButtonLarge';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-function Login({ navigation }) {
+function Register({ navigation }) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [isKeyboardVisible, setKeyboardVisible] = useState(false);
@@ -35,9 +35,9 @@ function Login({ navigation }) {
             <ScrollView>
                 <Text style={{
                     fontSize: 26, color: 'white', marginLeft: '5%',
-                    marginTop: windowHeight / 100 * 5, marginBottom: 20
+                    marginTop: windowHeight / 100 * 8, marginBottom: 20
                 }}>
-                    Hi, {'\n'}Welcome back!
+                    Sign up
             </Text>
 
                 <Input
@@ -45,44 +45,31 @@ function Login({ navigation }) {
                     onChangeText={text => setEmail(text)}
                     value={email}
                 />
-
+                <Input
+                    placeholder="Email"
+                    value={password}
+                    onChangeText={text => setPassword(text)}
+                /><Input
+                    placeholder="Mobile Number"
+                    value={password}
+                    onChangeText={text => setPassword(text)}
+                />
                 <Input
                     placeholder="Password"
                     value={password}
                     onChangeText={text => setPassword(text)}
                 />
-
-                <TouchableOpacity style={{ alignSelf: 'flex-end', marginRight: '5%' }}>
-
-                    <Text style={{
-                        fontSize: 16, color: '#D6B149', fontFamily: 'OpenSans-SemiBold',
-                        marginTop: 15,
-                    }}>
-                        Forgot your password ?
-                </Text>
-
-                </TouchableOpacity>
-
-                <View style={{ height: 30 }} />
-
-                <ButtonLarge
-                    title="Log In"
-                    onPress={()=>navigation.navigate('HomeTabs')}
+                <Input
+                    placeholder="Confirm Password"
+                    value={password}
+                    onChangeText={text => setPassword(text)}
                 />
 
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    onPress={() => console.log("Button Pressed!")}
-                    style={styles.buttonStyleFb}>
-                    <Text style={styles.buttonTitleStyleFb}>Facebook</Text>
-                </TouchableOpacity>
 
-                <TouchableOpacity
-                    activeOpacity={0.5}
+                <ButtonLarge
+                    title="Sign up"
                     onPress={() => console.log("Button Pressed!")}
-                    style={styles.buttonStyleGoogle}>
-                    <Text style={styles.buttonTitleStyleGoogle}>Google</Text>
-                </TouchableOpacity>
+                />
 
             </ScrollView>
             {!isKeyboardVisible ?
@@ -92,15 +79,15 @@ function Login({ navigation }) {
                         fontSize: 16, color: 'white',
                         marginTop: 10,
                     }}>
-                        Don't have an account? </Text>
+                        Already have an account? </Text>
 
-                    <TouchableOpacity style={{ alignSelf: 'flex-end', marginRight: '5%' }} onPress={()=>navigation.navigate('Register')}>
+                    <TouchableOpacity style={{ alignSelf: 'flex-end', marginRight: '5%' }} onPress={()=>navigation.navigate('Login')}>
 
                         <Text style={{
                             fontSize: 16, color: '#D6B149',
                             marginTop: 10,
                         }}>
-                            Sign Up
+                            Log in
                         </Text>
 
                     </TouchableOpacity>
@@ -112,7 +99,7 @@ function Login({ navigation }) {
     );
 }
 
-export default Login;
+export default Register;
 
 const styles = StyleSheet.create({
     buttonStyleFb: {
