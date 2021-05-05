@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Dimensions, TouchableOpacity, Text, ScrollView, StyleSheet, Keyboard } from 'react-native';
 import Input from '../components/TextInput';
 import ButtonLarge from '../components/ButtonLarge';
+import { SocialIcon } from 'react-native-elements'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -31,70 +32,79 @@ function Register({ navigation }) {
         };
     }, []);
     return (
-        <View style={{ flex: 1, backgroundColor: '#332B1F' }}>
-            <ScrollView>
-                <Text style={{
-                    fontSize: 26, color: 'white', marginLeft: '5%',
-                    marginTop: windowHeight / 100 * 8, marginBottom: 20
-                }}>
+        <View style={{ flex: 1, marginHorizontal: 10 ,marginBottom:20}}>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <Text style={styles.title}>
                     Sign up
             </Text>
 
                 <Input
                     placeholder="Username"
-                    onChangeText={text => setEmail(text)}
-                    value={email}
+                    icon='person'
+                    label='First Name'
+                // onChangeText={text => setEmail(text)}
+                //value={email}
                 />
                 <Input
                     placeholder="Email"
-                    value={password}
-                    onChangeText={text => setPassword(text)}
-                /><Input
-                    placeholder="Mobile Number"
-                    value={password}
-                    onChangeText={text => setPassword(text)}
+                    icon='mail-outline'
+                    label='Email'
+                // value={password}
+                // onChangeText={text => setPassword(text)}
+                />
+                <Input
+                    placeholder="Phone Number"
+                    icon='call-outline'
+                    label='Phone Number'
+                // onChangeText={text => setEmail(text)}
+                // value={email}
                 />
                 <Input
                     placeholder="Password"
-                    value={password}
-                    onChangeText={text => setPassword(text)}
+                    icon='lock-open-outline'
+                    label='Password'
+                    // value={password}
+                    secureTextEntry={true}
+                // onChangeText={text => setPassword(text)}
                 />
                 <Input
-                    placeholder="Confirm Password"
-                    value={password}
-                    onChangeText={text => setPassword(text)}
+                    placeholder="Pays"
+                    icon='cash-outline'
+                    label='Pays '
+                // value={password}
+                // onChangeText={text => setPassword(text)}
                 />
-
+                <Input
+                    placeholder="Code References [ If You Have ] "
+                    icon='md-keypad-outline'
+                    label='Code References '
+                // value={password}
+                // onChangeText={text => setPassword(text)}
+                />
 
                 <ButtonLarge
-                    title="Sign up"
-                    onPress={() => console.log("Button Pressed!")}
+                    title="SIGN UP"
+                    onPress={() => navigation.navigate('PhotoFace')}
                 />
-
+                {/* <Text style={{ textAlign: 'center', marginVertical: 10 }}>────────  OR  ────────</Text>
+                <View style={{ flexDirection: 'row' }}>
+                    <SocialIcon
+                        style={{ flex: 1,height:45,fontSize:12 }}
+                        iconSize={15}
+                        title='Google'
+                        button
+                        type='google'
+                    />
+                    <SocialIcon
+                        style={{ flex: 1,height:45,fontSize:12 }}
+                        iconSize={15}
+                        title='Facebook'
+                        button
+                        type='facebook'
+                    />
+                </View> */}
             </ScrollView>
-            {!isKeyboardVisible ?
-                <View style={{ marginTop: 15, alignSelf: 'center', alignItems: 'center', flexDirection: 'row', bottom: 0, marginBottom: 20 }}>
 
-                    <Text style={{
-                        fontSize: 16, color: 'white',
-                        marginTop: 10,
-                    }}>
-                        Already have an account? </Text>
-
-                    <TouchableOpacity style={{ alignSelf: 'flex-end', marginRight: '5%' }} onPress={()=>navigation.navigate('Login')}>
-
-                        <Text style={{
-                            fontSize: 16, color: '#D6B149',
-                            marginTop: 10,
-                        }}>
-                            Log in
-                        </Text>
-
-                    </TouchableOpacity>
-
-                </View>
-                : null
-            }
         </View>
     );
 }
@@ -102,34 +112,9 @@ function Register({ navigation }) {
 export default Register;
 
 const styles = StyleSheet.create({
-    buttonStyleFb: {
-        backgroundColor: '#1467E9',
-        height: 50,
-        width: '90%',
-        marginTop: 10,
-        justifyContent: 'center',
-        alignSelf: 'center',
-        borderRadius: 8,
-        elevation: 10
+    title: {
+        fontSize: 26, color: 'black', marginLeft: '5%',
+        marginTop: windowHeight / 100 * 10, marginBottom: 20
     },
-    buttonTitleStyleFb: {
-        textAlign: "center",
-        fontSize: 18,
-        color: '#ffffff'
-    },
-    buttonStyleGoogle: {
-        backgroundColor: '#F44848',
-        height: 50,
-        width: '90%',
-        marginTop: 10,
-        justifyContent: 'center',
-        alignSelf: 'center',
-        borderRadius: 8,
-        elevation: 10
-    },
-    buttonTitleStyleGoogle: {
-        textAlign: "center",
-        fontSize: 18,
-        color: '#ffffff'
-    },
+
 })

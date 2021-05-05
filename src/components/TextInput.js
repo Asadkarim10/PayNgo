@@ -1,18 +1,37 @@
 import * as React from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import {  StyleSheet } from 'react-native';
+import { Input } from 'react-native-elements';
+import Icon from "react-native-vector-icons/Ionicons";
 
-const Input = ({ placeholder, value, onChangeText }) => {
+const TextInput = ({ placeholder, value, onChangeText ,label,icon,secureTextEntry}) => {
     return (
-        <TextInput style={styles.input}
+        <Input
             placeholder={placeholder}
-            placeholderTextColor = "#7D7D7D"
             value={value}
             onChangeText={onChangeText}
+            label={label}
+            inputStyle={{fontSize:14}}
+            labelStyle={{fontSize:14}}
+            containerStyle={{height:90}}
+            secureTextEntry={secureTextEntry}
+            leftIcon={
+                <Icon
+                    name={icon}
+                    size={20}
+                    color='grey'
+                />
+            }
         />
+        // <TextInput style={styles.input}
+        //     placeholder={placeholder}
+        //     placeholderTextColor = "#7D7D7D"
+        //     value={value}
+        //     onChangeText={onChangeText}
+        // />
     );
 }
 
-export default Input;
+export default TextInput;
 
 const styles = StyleSheet.create({
     input: {

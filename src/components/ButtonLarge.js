@@ -14,13 +14,13 @@ const ButtonLarge = ({ title, onPress }) => {
 
 const styles = StyleSheet.create({
     buttonStyle: {
-        backgroundColor: '#D6B149',
+        backgroundColor: '#0150E3',
         height: 50,
         width: '90%',
         marginTop: 30,
         justifyContent: 'center',
         alignSelf: 'center',
-        borderRadius: 8,
+        borderRadius: 45,
         elevation: 10
     },
     buttonTitleStyle: {

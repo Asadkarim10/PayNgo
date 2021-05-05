@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Dimensions, TouchableOpacity, Text, ScrollView, StyleSheet, Keyboard } from 'react-native';
-import Input from '../components/TextInput';
+import TextInput from '../components/TextInput';
 import ButtonLarge from '../components/ButtonLarge';
+import { SocialIcon } from 'react-native-elements'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -31,83 +32,73 @@ function Login({ navigation }) {
         };
     }, []);
     return (
-        <View style={{ flex: 1, backgroundColor: '#332B1F' }}>
+        <View style={{ flex: 1, marginHorizontal: 10 }}>
             <ScrollView>
                 <Text style={{
-                    fontSize: 26, color: 'white', marginLeft: '5%',
-                    marginTop: windowHeight / 100 * 5, marginBottom: 20
+                    fontSize: 26, color: 'black', marginLeft: '5%',
+                    marginTop: windowHeight / 100 * 10, marginBottom: 40
                 }}>
-                    Hi, {'\n'}Welcome back!
+                    Login
             </Text>
 
-                <Input
-                    placeholder="Username"
+                <TextInput
+                    placeholder="Phone Number"
+                    icon='call-outline'
+                    label='Phone Number'
                     onChangeText={text => setEmail(text)}
                     value={email}
                 />
 
-                <Input
+                <TextInput
                     placeholder="Password"
+                    icon='lock-open-outline'
+                    label='Password'
                     value={password}
+                    secureTextEntry={true}
                     onChangeText={text => setPassword(text)}
                 />
 
                 <TouchableOpacity style={{ alignSelf: 'flex-end', marginRight: '5%' }}>
 
                     <Text style={{
-                        fontSize: 16, color: '#D6B149', fontFamily: 'OpenSans-SemiBold',
-                        marginTop: 15,
+                        fontSize: 14, color: '#3a55de', fontFamily: 'OpenSans-SemiBold',
                     }}>
-                        Forgot your password ?
+                        Forgot your password?
                 </Text>
 
                 </TouchableOpacity>
 
-                <View style={{ height: 30 }} />
+                <View style={{ height: 20 }} />
 
                 <ButtonLarge
                     title="Log In"
-                    onPress={()=>navigation.navigate('HomeTabs')}
+                    onPress={() => navigation.navigate('OTP')}
                 />
 
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    onPress={() => console.log("Button Pressed!")}
-                    style={styles.buttonStyleFb}>
-                    <Text style={styles.buttonTitleStyleFb}>Facebook</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    onPress={() => console.log("Button Pressed!")}
-                    style={styles.buttonStyleGoogle}>
-                    <Text style={styles.buttonTitleStyleGoogle}>Google</Text>
-                </TouchableOpacity>
-
             </ScrollView>
-            {!isKeyboardVisible ?
+            {/* {!isKeyboardVisible ?
                 <View style={{ marginTop: 15, alignSelf: 'center', alignItems: 'center', flexDirection: 'row', bottom: 0, marginBottom: 20 }}>
 
                     <Text style={{
-                        fontSize: 16, color: 'white',
+                        fontSize: 16, color: 'black',
                         marginTop: 10,
                     }}>
                         Don't have an account? </Text>
 
-                    <TouchableOpacity style={{ alignSelf: 'flex-end', marginRight: '5%' }} onPress={()=>navigation.navigate('Register')}>
+                    <TouchableOpacity style={{ alignSelf: 'flex-end', marginRight: '5%' }} onPress={() => navigation.navigate('Register')}>
 
                         <Text style={{
-                            fontSize: 16, color: '#D6B149',
-                            marginTop: 10,
+                            fontSize: 16, color: '#3a55de',
+                            marginTop: 10, textDecorationLine: 'underline'
                         }}>
-                            Sign Up
+                            SIGN UP
                         </Text>
 
                     </TouchableOpacity>
 
                 </View>
                 : null
-            }
+            } */}
         </View>
     );
 }
