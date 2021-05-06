@@ -17,14 +17,14 @@ const Home = ({navigation}) => {
             icon: 'add',
             IconColor:'#6B3CE9',
             backgroundColor:'#F3EFFF',
-            screen:'QRcode'
+            screen:'Wallettype'
         },
         {
             title: 'Transfer of funds',
             icon: 'arrow-forward',
             IconColor:'#66D59A',
             backgroundColor:'#E6FEF0',
-            screen:'QRcode'
+            screen:'TransferFund'
         },
         {
             title: 'Billing Payments',

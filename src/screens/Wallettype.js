@@ -24,7 +24,7 @@ class Wallettype extends Component {
                     }}>Add Cash</Text>
                 </View>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('SelectWallet')} >
                     <View style={styles.card}>
                         <View style={styles.insideCard}>
                             <Entypo name="wallet" size={70} color="#0150E3" />

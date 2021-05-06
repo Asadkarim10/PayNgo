@@ -7,7 +7,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { SafeAreaView, StyleSheet } from  'react-native';
 
 class TransferFund extends Component {
-  render() {
+  render(props) {
     return (
         <View style = {{
             flex:1
@@ -69,7 +69,7 @@ class TransferFund extends Component {
         </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style = {{
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('BankToWallet')} style = {{
             
             shadowColor: "#0150E3",
             marginTop: 20,
