@@ -19,7 +19,11 @@ import PinCode from '../screens/PinCode';
 import QRcode from '../screens/QRcode';
 import Wallettype from '../screens/Wallettype'
 import TransferFund from '../screens/TransferFund'
-import AddCashScreen from '../screens/AddCashScreen';
+import AddCashScreen from '../screens/AddCashScreen'
+import WalletToWallet from '../screens/WalletToWallet';
+import BankToWallet from '../screens/BankToWallet';
+
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -88,13 +92,15 @@ export default function Navigation() {
 
     return (
 
-        <Stack.Navigator initialRouteName='AddCashScreen'
+        <Stack.Navigator initialRouteName='Options'
             screenOptions={{
                 headerTintColor: 'white'
             }}>
             <Stack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }} />
             <Stack.Screen name="Options" component={Options} options={{ title: false, headerTransparent: true }} />
             <Stack.Screen name="Wallettype" component={Wallettype} options={{ title: false, headerTransparent: true }} />
+            <Stack.Screen name="WalletToWallet" component={WalletToWallet} options={{ title: false, headerTransparent: true }} />
+            <Stack.Screen name="BankToWallet" component={BankToWallet} options={{ title: false, headerTransparent: true }} />
             <Stack.Screen name="SelectWallet" component={SelectWallet} options={{title:false , headerTransparent: true}}  />
             <Stack.Screen name="AddCashScreen" component={AddCashScreen} options={{title:false , headerTransparent: true}}  />
             <Stack.Screen name="TransferFund" component={TransferFund} options={{title:false , headerTransparent: true}}  />
